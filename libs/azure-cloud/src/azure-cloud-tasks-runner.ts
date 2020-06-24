@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
 import { ProjectGraph } from "@nrwl/workspace/src/core/project-graph";
 import { NxJson } from "@nrwl/workspace/src/core/shared-interfaces";
 import { AffectedEvent, Task } from "@nrwl/workspace/src/tasks-runner/tasks-runner";

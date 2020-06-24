@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
 module.exports = {
   name: 'azure-cloud',
   preset: '../../jest.config.js',

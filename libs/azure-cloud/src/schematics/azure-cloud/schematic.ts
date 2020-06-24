@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
 import { Rule } from "@angular-devkit/schematics";
 import { updateJsonFile } from "@nrwl/workspace";
 import { execSync } from "child_process";
