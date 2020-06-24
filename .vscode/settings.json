@@ -1,0 +1,37 @@
+{
+  // code style and linter settings
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+
+  // Auto-format and lint
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true
+  },
+
+  // Editor optimizations
+  "files.exclude": {
+    "**/*.hot-update.*": true,
+    "**/.cache-loader": true,
+    "**/build": true,
+    "**/coverage": false,
+    "**/node_modules": false,
+    "**/logs": false,
+    "**/*.log": true
+  },
+
+  "search.exclude": {
+    "**/build": true,
+    "**/coverage": true,
+    "**/lib": true,
+    "**/node_modules": true,
+    "**/logs": true,
+    "**/*.log": true
+  }
+}
