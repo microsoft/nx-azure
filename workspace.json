@@ -1,9 +1,9 @@
 {
   "version": 1,
   "projects": {
-    "azure-cloud": {
-      "root": "libs/azure-cloud",
-      "sourceRoot": "libs/azure-cloud/src",
+    "storage-cache": {
+      "root": "libs/storage-cache",
+      "sourceRoot": "libs/storage-cache/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -11,43 +11,43 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/azure-cloud/.eslintrc",
+            "config": "libs/storage-cache/.eslintrc",
             "tsConfig": [
-              "libs/azure-cloud/tsconfig.lib.json",
-              "libs/azure-cloud/tsconfig.spec.json"
+              "libs/storage-cache/tsconfig.lib.json",
+              "libs/storage-cache/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/azure-cloud/**"]
+            "exclude": ["**/node_modules/**", "!libs/storage-cache/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/azure-cloud/jest.config.js",
-            "tsConfig": "libs/azure-cloud/tsconfig.spec.json",
+            "jestConfig": "libs/storage-cache/jest.config.js",
+            "tsConfig": "libs/storage-cache/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
         "build": {
           "builder": "@nrwl/node:package",
           "options": {
-            "outputPath": "dist/libs/azure-cloud",
-            "tsConfig": "libs/azure-cloud/tsconfig.lib.json",
-            "packageJson": "libs/azure-cloud/package.json",
-            "main": "libs/azure-cloud/src/index.ts",
+            "outputPath": "dist/libs/storage-cache",
+            "tsConfig": "libs/storage-cache/tsconfig.lib.json",
+            "packageJson": "libs/storage-cache/package.json",
+            "main": "libs/storage-cache/src/index.ts",
             "assets": [
-              "libs/azure-cloud/*.md",
+              "libs/storage-cache/*.md",
               {
-                "input": "./libs/azure-cloud/src",
+                "input": "./libs/storage-cache/src",
                 "glob": "**/*.!(ts)",
                 "output": "./src"
               },
               {
-                "input": "./libs/azure-cloud",
+                "input": "./libs/storage-cache",
                 "glob": "collection.json",
                 "output": "."
               },
               {
-                "input": "./libs/azure-cloud",
+                "input": "./libs/storage-cache",
                 "glob": "builders.json",
                 "output": "."
               }
@@ -56,19 +56,19 @@
         }
       }
     },
-    "azure-cloud-e2e": {
+    "storage-cache-e2e": {
       "projectType": "application",
-      "root": "apps\\azure-cloud-e2e",
-      "sourceRoot": "apps\\azure-cloud-e2e/src",
+      "root": "apps\\storage-cache-e2e",
+      "sourceRoot": "apps\\storage-cache-e2e/src",
       "architect": {
         "e2e": {
           "builder": "@nrwl/nx-plugin:e2e",
           "options": {
-            "target": "azure-cloud:build",
-            "npmPackageName": "@nx-azure/azure-cloud",
-            "pluginOutputPath": "dist/libs/azure-cloud",
-            "jestConfig": "apps/azure-cloud-e2e/jest.config.js",
-            "tsSpecConfig": "apps/azure-cloud-e2e/tsconfig.spec.json"
+            "target": "storage-cache:build",
+            "npmPackageName": "@nx-azure/storage-cache",
+            "pluginOutputPath": "dist/libs/storage-cache",
+            "jestConfig": "apps/storage-cache-e2e/jest.config.js",
+            "tsSpecConfig": "apps/storage-cache-e2e/tsconfig.spec.json"
           }
         }
       }

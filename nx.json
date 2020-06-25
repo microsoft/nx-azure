@@ -19,12 +19,12 @@
     }
   },
   "projects": {
-    "azure-cloud": {
+    "storage-cache": {
       "tags": []
     },
-    "azure-cloud-e2e": {
+    "storage-cache-e2e": {
       "tags": [],
-      "implicitDependencies": ["azure-cloud"]
+      "implicitDependencies": ["storage-cache"]
     }
   }
 }

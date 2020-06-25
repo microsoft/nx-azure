@@ -7,16 +7,16 @@ import {
   runNxCommandAsync,
 } from "@nrwl/nx-plugin/testing";
 
-describe("azure-cloud e2e", () => {
-  it("should create azure-cloud", async (done) => {
-    ensureNxProject("@nx-azure/azure-cloud", "dist/libs/azure-cloud");
+describe("storage-cache e2e", () => {
+  it("should create storage-cache", async (done) => {
+    ensureNxProject("@nx-azure/storage-cache", "dist/libs/storage-cache");
     await runNxCommandAsync(
-      `generate @nx-azure/azure-cloud:init --storageAccount accountName --storageContainer containerName`
+      `generate @nx-azure/storage-cache:init --storageAccount accountName --storageContainer containerName`
     );
 
     const nxJson = readJson("nx.json");
     expect(nxJson.tasksRunnerOptions.default.runner).toEqual(
-      "@nx-azure/azure-cloud"
+      "@nx-azure/storage-cache"
     );
 
     done();

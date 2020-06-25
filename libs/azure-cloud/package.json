@@ -1,7 +1,7 @@
 {
-  "name": "@nx-azure/azure-cloud",
-  "version": "0.0.3",
-  "description": "Azure Cloud plugin for Nx",
+  "name": "@nx-azure/storage-cache",
+  "version": "0.0.1",
+  "description": "Azure Storage Cache plugin for Nx",
   "main": "index.js",
   "types": "index.d.ts",
   "typings": "index.d.ts",

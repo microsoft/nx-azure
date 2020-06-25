@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-import azureCloudTasksRunner from './src/azure-cloud-tasks-runner';
+import storageCacheTasksRunner from './src/storage-cache-tasks-runner';
 
-export default azureCloudTasksRunner;
+export default storageCacheTasksRunner;

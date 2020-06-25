@@ -6,7 +6,7 @@ import { updateJsonFile } from "@nrwl/workspace";
 import { execSync } from "child_process";
 import { readFileSync, statSync } from "fs";
 import { noop } from "rxjs";
-import { AzureCloudSchematicSchema } from "./schema";
+import { StorageCacheSchematicSchema } from "./schema";
 
 function isCompatibleVersion() {
   const json = JSON.parse(readFileSync("package.json").toString());
@@ -14,7 +14,7 @@ function isCompatibleVersion() {
     json.dependencies["@nrwl/workspace"] ||
     json.devDependencies["@nrwl/workspace"];
   if (!version) {
-    throw new Error(`You must use Nx >= 8.0 to enable Azure Cloud`);
+    throw new Error(`You must use Nx >= 8.0 to enable Storage Cache`);
   }
 
   if (version.startsWith("^") || version.startsWith("~")) {
@@ -47,7 +47,7 @@ function isYarn() {
 
 function updateWorkspacePackage() {
   console.log(
-    `Updating @nrwl/workspace ot 8.12.10 to make the workspace compatible with Azure Cloud.`
+    `Updating @nrwl/workspace ot 8.12.10 to make the workspace compatible with Storage Cache.`
   );
   if (isYarn()) {
     console.log(`yarn add --dev @nrwl/workspace@8.12.10`);
@@ -62,11 +62,11 @@ function updateWorkspacePackage() {
   }
 }
 
-function updateNxJson(ops: AzureCloudSchematicSchema) {
+function updateNxJson(ops: StorageCacheSchematicSchema) {
   updateJsonFile("nx.json", (json) => {
     json.tasksRunnerOptions = {
       default: {
-        runner: "@nx-azure/azure-cloud",
+        runner: "@nx-azure/storage-cache",
         options: {
           sasToken: ops.sasToken ? ops.sasToken : "",
           storageAccount: ops.storageAccount,
@@ -78,7 +78,7 @@ function updateNxJson(ops: AzureCloudSchematicSchema) {
   });
 }
 
-export default function (options: AzureCloudSchematicSchema): Rule {
+export default function (options: StorageCacheSchematicSchema): Rule {
   return async () => {
     if (!isCompatibleVersion()) {
       updateWorkspacePackage();
