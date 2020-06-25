@@ -3,8 +3,15 @@
 
 import { ProjectGraph } from "@nrwl/workspace/src/core/project-graph";
 import { NxJson } from "@nrwl/workspace/src/core/shared-interfaces";
-import { AffectedEvent, Task } from "@nrwl/workspace/src/tasks-runner/tasks-runner";
-import { DefaultTasksRunnerOptions, RemoteCache, tasksRunnerV2 } from "@nrwl/workspace/src/tasks-runner/tasks-runner-v2";
+import {
+  AffectedEvent,
+  Task,
+} from "@nrwl/workspace/src/tasks-runner/tasks-runner";
+import {
+  DefaultTasksRunnerOptions,
+  RemoteCache,
+  tasksRunnerV2,
+} from "@nrwl/workspace/src/tasks-runner/tasks-runner-v2";
 import { output } from "@nrwl/workspace/src/utils/output";
 import { BlobService, createBlobService } from "azure-storage";
 import * as chalk from "chalk";
@@ -21,7 +28,7 @@ interface Context {
   nxJson: NxJson;
 }
 
-interface AzureCloudTaskRunnerOptions extends DefaultTasksRunnerOptions {
+interface StorageCacheTaskRunnerOptions extends DefaultTasksRunnerOptions {
   sasToken?: string;
   storageAccount: string;
   storageContainer: string;
@@ -76,7 +83,7 @@ class MessageReporter {
         bodyLines.push(`- ${this.apiError}`);
       }
       output.warn({
-        title: `Azure Cloud Problems`,
+        title: `Storage Cache Problems`,
         bodyLines,
       });
     }
@@ -119,7 +126,7 @@ class AzureStorageRemoteCloud implements RemoteCache {
   private storeRequests: Promise<boolean>[];
 
   constructor(
-    private options: AzureCloudTaskRunnerOptions,
+    private options: StorageCacheTaskRunnerOptions,
     private messages: MessageReporter,
     private statuses: Statuses
   ) {
@@ -133,7 +140,7 @@ class AzureStorageRemoteCloud implements RemoteCache {
     try {
       if (AzureStorageRemoteCloud.VERBOSE_LOGGING) {
         output.note({
-          title: `Azure Cloud: Downloading ${hash}`,
+          title: `Storage Cache: Downloading ${hash}`,
         });
       }
 
@@ -143,7 +150,7 @@ class AzureStorageRemoteCloud implements RemoteCache {
 
       if (AzureStorageRemoteCloud.VERBOSE_LOGGING) {
         output.note({
-          title: `Azure Cloud: Cache hit ${hash}`,
+          title: `Storage Cache: Cache hit ${hash}`,
         });
       }
       this.statuses[hash] = "remote-cache-hit";
@@ -157,7 +164,7 @@ class AzureStorageRemoteCloud implements RemoteCache {
       if (e.statusCode && e.statusCode === 404) {
         if (AzureStorageRemoteCloud.VERBOSE_LOGGING) {
           output.note({
-            title: `Azure Cloud: Cache miss ${hash}`,
+            title: `Storage Cache: Cache miss ${hash}`,
           });
         }
       } else {
@@ -180,7 +187,7 @@ class AzureStorageRemoteCloud implements RemoteCache {
       try {
         if (AzureStorageRemoteCloud.VERBOSE_LOGGING) {
           output.note({
-            title: `Azure Cloud: Storage ${hash}`,
+            title: `Storage Cache: Storage ${hash}`,
           });
         }
 
@@ -188,7 +195,7 @@ class AzureStorageRemoteCloud implements RemoteCache {
         await this.uploadFile(hash, tgz);
         if (AzureStorageRemoteCloud.VERBOSE_LOGGING) {
           output.note({
-            title: `Azure Cloud: Stored ${hash}`,
+            title: `Storage Cache: Stored ${hash}`,
           });
         }
         return true;
@@ -355,9 +362,9 @@ class AzureStorageRemoteCloud implements RemoteCache {
   }
 }
 
-const azureCloudTasksRunner = (
+const storageCacheTasksRunner = (
   tasks: Task[],
-  options: AzureCloudTaskRunnerOptions,
+  options: StorageCacheTaskRunnerOptions,
   context: Context
 ): Observable<AffectedEvent> => {
   if (
@@ -396,7 +403,7 @@ const azureCloudTasksRunner = (
     }
 
     if (!options.sasToken) {
-      throw "No SAS Token was found."
+      throw "No SAS Token was found.";
     }
 
     if (options.sasToken.charAt(0) === "?") {
@@ -429,4 +436,4 @@ const azureCloudTasksRunner = (
   }
 };
 
-export default azureCloudTasksRunner;
+export default storageCacheTasksRunner;

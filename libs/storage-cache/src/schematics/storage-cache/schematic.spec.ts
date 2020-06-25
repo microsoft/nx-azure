@@ -5,18 +5,18 @@ import { Tree } from "@angular-devkit/schematics";
 import { SchematicTestRunner } from "@angular-devkit/schematics/testing";
 import { createEmptyWorkspace } from "@nrwl/workspace/testing";
 import { join } from "path";
-import { AzureCloudSchematicSchema } from "./schema";
+import { StorageCacheSchematicSchema } from "./schema";
 
-describe("azure-cloud schematic", () => {
+describe("storage-cache schematic", () => {
   let appTree: Tree;
-  const options: AzureCloudSchematicSchema = {
+  const options: StorageCacheSchematicSchema = {
     sasToken: "foo",
     storageAccount: "bar",
     storageContainer: "baz",
   };
 
   const testRunner = new SchematicTestRunner(
-    "@nx-azure/azure-cloud",
+    "@nx-azure/storage-cache",
     join(__dirname, "../../../collection.json")
   );
 
@@ -26,7 +26,7 @@ describe("azure-cloud schematic", () => {
 
   it("should run successfully", async () => {
     await expect(
-      testRunner.runSchematicAsync("azure-cloud", options, appTree).toPromise()
+      testRunner.runSchematicAsync("storage-cache", options, appTree).toPromise()
     ).resolves.not.toThrowError();
   });
 });

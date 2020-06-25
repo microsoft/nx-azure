@@ -1,7 +1,7 @@
 {
-  "name": "@nx-azure/azure-cloud",
-  "version": "0.0.3",
-  "description": "Azure Cloud plugin for Nx",
+  "name": "@nx-azure/storage-cache",
+  "version": "0.0.1",
+  "description": "Azure Storage Cache plugin for Nx",
   "main": "index.js",
   "types": "index.d.ts",
   "typings": "index.d.ts",
@@ -16,6 +16,9 @@
     "tar": "^6.0.2",
     "azure-storage": "^2.10.3",
     "rxjs": "^6.5.4",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "@nrwl/workspace": "9.4.5",
+    "chalk": "^4.1.0",
+    "@angular-devkit/schematics": "~9.1.0"
   }
 }

@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "id": "AzureCloud",
-  "title": "Add Azure Cloud configuration to the workspace",
+  "id": "StorageCache",
+  "title": "Add Azure Storage Cache configuration to the workspace",
   "type": "object",
   "properties": {
     "sasToken": {
       "type": "string",
-      "description": "Azure Cloud SAS Token."
+      "description": "Azure Storage SAS Token."
     },
     "storageAccount": {
       "type": "string",
