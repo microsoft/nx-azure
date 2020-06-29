@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+// This file includes code from @nrwl/nx-cloud@9.3.2 under MIT license
+
 import { ProjectGraph } from "@nrwl/workspace/src/core/project-graph";
 import { NxJson } from "@nrwl/workspace/src/core/shared-interfaces";
 import {

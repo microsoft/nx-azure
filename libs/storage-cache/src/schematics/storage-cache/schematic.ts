@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+// This file includes code from @nrwl/nx-cloud@9.3.2 under MIT license
+
 import { Rule } from "@angular-devkit/schematics";
 import { updateJsonFile } from "@nrwl/workspace";
 import { execSync } from "child_process";
