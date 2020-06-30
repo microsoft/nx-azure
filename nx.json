@@ -1,5 +1,8 @@
 {
   "npmScope": "nx-azure",
+  "affected": {
+    "defaultBase": "origin/main"
+  },
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": {
