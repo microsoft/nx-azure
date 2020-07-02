@@ -11,10 +11,10 @@ pool:
 steps:
   # System.PullRequest.TargetBranch is always 'refs/heads/BRANCH_NAME'
   # so removing first 11 characters ('refs/heads/') gives us the branch name
-  - pwsh: echo "##vso[task.setvariable variable=nxbase]origin/$('$(System.PullRequest.TargetBranch)'.substring(11))"
+  - pwsh: echo "##vso[task.setvariable variable=nxbase]origin/$(System.PullRequest.TargetBranch)"
     displayName: "Set --base for nx"
 
-  - pwsh: echo "##vso[task.setvariable variable=nxhead]origin/$('$(System.PullRequest.SourceBranch)'.substring(11))"
+  - pwsh: echo "##vso[task.setvariable variable=nxhead]origin/$(System.PullRequest.SourceBranch)"
     displayName: "Set --head for nx"
 
   - template: templates/setup-and-build.yml
