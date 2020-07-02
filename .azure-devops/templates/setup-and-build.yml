@@ -1,0 +1,44 @@
+parameters:
+  - name: nxbase # name of the parameter; required
+    displayName: "Base to compare for 'affected' commands"
+    type: string # data type of the parameter; required
+    default: ""
+
+  - name: nxhead # name of the parameter; required
+    displayName: "HEAD to compare for 'affected' commands"
+    type: string # data type of the parameter; required
+    default: ""
+
+steps:
+  - task: PoliCheck@1
+    inputs:
+      inputType: "Basic"
+      targetType: "F"
+      targetArgument: "$(Build.SourcesDirectory)/libs/"
+      result: "PoliCheck.xml"
+
+  - task: Yarn@3
+    displayName: "Installing dependencies with yarn@1.22.4"
+    inputs:
+      arguments: "install --frozen-lockfile"
+
+  - task: Yarn@3
+    displayName: "Running linters"
+    inputs:
+      arguments: "affected:lint --base=${{ parameters.nxbase }} --head=${{ parameters.nxhead }} --parallel"
+
+  - task: Yarn@3
+    displayName: "Running unit tests"
+    inputs:
+      arguments: "affected:test --base=${{ parameters.nxbase }} --head=${{ parameters.nxhead }} --parallel"
+
+  - task: PublishTestResults@2
+    displayName: "Publish unit test results"
+    inputs:
+      testResultsFiles: junit.xml
+      testRunner: JUnit
+
+  - task: Yarn@3
+    displayName: "Building the app"
+    inputs:
+      arguments: "affected:build --base=${{ parameters.nxbase }} --head=${{ parameters.nxhead }} --parallel --production --buildLibsFromSource --with-deps"
