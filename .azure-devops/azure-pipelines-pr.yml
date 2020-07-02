@@ -9,8 +9,6 @@ pool:
   vmImage: "windows-latest"
 
 steps:
-  # System.PullRequest.TargetBranch is always 'refs/heads/BRANCH_NAME'
-  # so removing first 11 characters ('refs/heads/') gives us the branch name
   - pwsh: echo "##vso[task.setvariable variable=nxbase]origin/$(System.PullRequest.TargetBranch)"
     displayName: "Set --base for nx"
 
