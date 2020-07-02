@@ -32,6 +32,11 @@ steps:
     inputs:
       arguments: "affected:test --base=${{ parameters.nxbase }} --head=${{ parameters.nxhead }} --parallel"
 
+  - task: Yarn@3
+    displayName: "Running e2e tests"
+    inputs:
+      arguments: "affected:e2e --base=${{ parameters.nxbase }} --head=${{ parameters.nxhead }} --parallel"
+
   - task: PublishTestResults@2
     displayName: "Publish unit test results"
     inputs:
@@ -42,3 +47,6 @@ steps:
     displayName: "Building the app"
     inputs:
       arguments: "affected:build --base=${{ parameters.nxbase }} --head=${{ parameters.nxhead }} --parallel --production --buildLibsFromSource --with-deps"
+
+  - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
+    displayName: "Component Detection"
