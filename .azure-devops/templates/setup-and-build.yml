@@ -44,4 +44,4 @@ steps:
       arguments: "affected:build --base=${{ parameters.nxbase }} --head=${{ parameters.nxhead }} --parallel --production --buildLibsFromSource --with-deps"
 
   - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
-    displayName: "Component Detection"
+    displayName: "OSS Component Detection"
