@@ -10,8 +10,9 @@
       "devDependencies": "*"
     },
     "tsconfig.json": "*",
-    "tslint.json": "*",
-    "nx.json": "*"
+    ".eslintrc": "*",
+    "nx.json": "*",
+    ".azure-devops/azure-pipelines-pr.yml": "*"
   },
   "tasksRunnerOptions": {
     "default": {

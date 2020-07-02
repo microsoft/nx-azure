@@ -1,0 +1,21 @@
+name: "$(date:yyyy-MM-dd)_$(rev:rr)"
+
+trigger: none
+
+pr:
+  - main
+
+pool:
+  vmImage: "windows-latest"
+
+steps:
+  - pwsh: echo "##vso[task.setvariable variable=nxbase]origin/$(System.PullRequest.TargetBranch)"
+    displayName: "Set --base for nx"
+
+  - pwsh: echo "##vso[task.setvariable variable=nxhead]origin/$(System.PullRequest.SourceBranch)"
+    displayName: "Set --head for nx"
+
+  - template: templates/setup-and-build.yml
+    parameters:
+      nxbase: $(nxbase)
+      nxhead: $(nxhead)

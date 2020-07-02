@@ -26,7 +26,7 @@ describe("storage-cache schematic", () => {
 
   it("should run successfully", async () => {
     await expect(
-      testRunner.runSchematicAsync("storage-cache", options, appTree).toPromise()
+      testRunner.runSchematicAsync("init", options, appTree).toPromise()
     ).resolves.not.toThrowError();
   });
 });
