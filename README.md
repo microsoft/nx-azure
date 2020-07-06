@@ -2,10 +2,9 @@
 
 A set of tools for Nx monorepo's working with Azure.
 
-
 # @nx-azure/storage-cache
 
-A tool for using Azure Storage as a distributed computational cache.
+A tool for using Azure Storage as a distributed computational cache for Nx.
 
 ## Setup
 
@@ -25,7 +24,7 @@ This will make the necessary changes to nx.json in your workspace, so you are ab
 
 ## Authentication
 
-Curren this just supports SAS Token's in order to authenticate with Azure Storage, but other methods could be added, please feel free to open a issue/PR.
+Currently this just supports SAS Token's in order to authenticate with Azure Storage, but other methods could be added, please feel free to open a issue/PR.
 
 There are three ways you can pass the SAS Token to @nx-azure/storage-cache.
 
@@ -43,7 +42,7 @@ This Nx plugin is heavily inspired by, and wouldn't be possible without, the Nx 
 
 # Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
