@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/microsoft/nx-azure"
   },
+  "homepage": "https://github.com/microsoft/nx-azure",
   "scripts": {
     "nx": "nx",
     "start": "nx serve",

@@ -50,6 +50,16 @@
                 "input": "./libs/storage-cache",
                 "glob": "builders.json",
                 "output": "."
+              },
+              {
+                "input": "./",
+                "glob": "LICENSE",
+                "output": "."
+              },
+              {
+                "input": "./",
+                "glob": "NOTICE.md",
+                "output": "."
               }
             ]
           }
