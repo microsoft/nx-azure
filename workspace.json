@@ -60,6 +60,11 @@
                 "input": "./",
                 "glob": "NOTICE.md",
                 "output": "."
+              },
+              {
+                "input": "./",
+                "glob": "README.md",
+                "output": "."
               }
             ]
           }
