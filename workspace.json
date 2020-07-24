@@ -23,7 +23,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/storage-cache/jest.config.js",
-            "tsConfig": "libs/storage-cache/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
@@ -59,6 +58,11 @@
               {
                 "input": "./",
                 "glob": "NOTICE.md",
+                "output": "."
+              },
+              {
+                "input": "./",
+                "glob": "README.md",
                 "output": "."
               }
             ]
