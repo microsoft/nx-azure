@@ -10,11 +10,13 @@
     },
     "storageAccount": {
       "type": "string",
-      "description": "The Azure Storage Account, where we will store the cached Nx outputs"
+      "description": "The Azure Storage Account, where we will store the cached Nx outputs",
+      "x-prompt": "What Azure Storage Account would you like to use to store the cached Nx outputs?"
     },
     "storageContainer": {
       "type": "string",
-      "description": "The Azure Storage Container, where we will store the cached Nx outputs"
+      "description": "The Azure Storage Container, where we will store the cached Nx outputs",
+      "x-prompt": "What Azure Storage Container in the account would you like to use to store the cached Nx outputs?"
     }
   },
   "required": ["storageAccount", "storageContainer"]
