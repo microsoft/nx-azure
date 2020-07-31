@@ -1,6 +1,6 @@
 {
   "name": "@nx-azure/storage-cache",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Azure Storage Cache plugin for Nx",
   "main": "index.js",
   "types": "index.d.ts",
@@ -21,8 +21,8 @@
     "azure-storage": "^2.10.3",
     "rxjs": "^6.5.4",
     "dotenv": "^8.2.0",
-    "@nrwl/workspace": "^9.5.1",
+    "@nrwl/workspace": "^10.0.4",
     "chalk": "^4.1.0",
-    "@angular-devkit/schematics": "~9.1.0"
+    "@angular-devkit/schematics": "^10.0.4"
   }
 }
