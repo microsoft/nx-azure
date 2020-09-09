@@ -65,7 +65,8 @@
                 "glob": "README.md",
                 "output": "."
               }
-            ]
+            ],
+            "srcRootForCompilationRoot": "libs\\storage-cache"
           }
         }
       }
