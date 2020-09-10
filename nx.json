@@ -30,5 +30,9 @@
       "tags": [],
       "implicitDependencies": ["storage-cache"]
     }
+  },
+  "workspaceLayout": {
+    "appsDir": "packages",
+    "libsDir": "packages"
   }
 }

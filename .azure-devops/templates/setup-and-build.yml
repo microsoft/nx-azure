@@ -14,7 +14,7 @@ steps:
     inputs:
       inputType: "Basic"
       targetType: "F"
-      targetArgument: "$(Build.SourcesDirectory)/libs/"
+      targetArgument: "$(Build.SourcesDirectory)/packages/"
       result: "PoliCheck.xml"
 
   - task: Yarn@3
