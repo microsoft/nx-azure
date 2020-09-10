@@ -2,8 +2,8 @@
   "version": 1,
   "projects": {
     "storage-cache": {
-      "root": "libs/storage-cache",
-      "sourceRoot": "libs/storage-cache/src",
+      "root": "packages/storage-cache",
+      "sourceRoot": "packages/storage-cache/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -11,42 +11,42 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/storage-cache/.eslintrc",
+            "config": "packages/storage-cache/.eslintrc",
             "tsConfig": [
-              "libs/storage-cache/tsconfig.lib.json",
-              "libs/storage-cache/tsconfig.spec.json"
+              "packages/storage-cache/tsconfig.lib.json",
+              "packages/storage-cache/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/storage-cache/**"]
+            "exclude": ["**/node_modules/**", "!packages/storage-cache/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/storage-cache/jest.config.js",
+            "jestConfig": "packages/storage-cache/jest.config.js",
             "passWithNoTests": true
           }
         },
         "build": {
           "builder": "@nrwl/node:package",
           "options": {
-            "outputPath": "dist/libs/storage-cache",
-            "tsConfig": "libs/storage-cache/tsconfig.lib.json",
-            "packageJson": "libs/storage-cache/package.json",
-            "main": "libs/storage-cache/src/index.ts",
+            "outputPath": "dist/packages/storage-cache",
+            "tsConfig": "packages/storage-cache/tsconfig.lib.json",
+            "packageJson": "packages/storage-cache/package.json",
+            "main": "packages/storage-cache/src/index.ts",
             "assets": [
-              "libs/storage-cache/*.md",
+              "packages/storage-cache/*.md",
               {
-                "input": "./libs/storage-cache/src",
+                "input": "./packages/storage-cache/src",
                 "glob": "**/*.!(ts)",
                 "output": "./src"
               },
               {
-                "input": "./libs/storage-cache",
+                "input": "./packages/storage-cache",
                 "glob": "collection.json",
                 "output": "."
               },
               {
-                "input": "./libs/storage-cache",
+                "input": "./packages/storage-cache",
                 "glob": "builders.json",
                 "output": "."
               },
@@ -66,24 +66,24 @@
                 "output": "."
               }
             ],
-            "srcRootForCompilationRoot": "libs\\storage-cache"
+            "srcRootForCompilationRoot": "packages\\storage-cache"
           }
         }
       }
     },
     "storage-cache-e2e": {
       "projectType": "application",
-      "root": "apps\\storage-cache-e2e",
-      "sourceRoot": "apps\\storage-cache-e2e/src",
+      "root": "packages\\storage-cache-e2e",
+      "sourceRoot": "packages\\storage-cache-e2e/src",
       "architect": {
         "e2e": {
           "builder": "@nrwl/nx-plugin:e2e",
           "options": {
             "target": "storage-cache:build",
             "npmPackageName": "@nx-azure/storage-cache",
-            "pluginOutputPath": "dist/libs/storage-cache",
-            "jestConfig": "apps/storage-cache-e2e/jest.config.js",
-            "tsSpecConfig": "apps/storage-cache-e2e/tsconfig.spec.json"
+            "pluginOutputPath": "dist/packages/storage-cache",
+            "jestConfig": "packages/storage-cache-e2e/jest.config.js",
+            "tsSpecConfig": "packages/storage-cache-e2e/tsconfig.spec.json"
           }
         }
       }
