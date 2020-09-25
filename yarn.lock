@@ -536,7 +536,7 @@
 
 "@nrwl/cli@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/cli/-/cli-10.2.1.tgz#394fb523fb7869ebbebf5ae2cbf593b8a01aacc4"
+  resolved "https://registry.yarnpkg.com/@nrwl/cli/-/cli-10.2.1.tgz#394fb523fb7869ebbebf5ae2cbf593b8a01aacc4"
   integrity sha1-OU+1I/t4aeu+v1riy/WTuKAarMQ=
   dependencies:
     "@nrwl/tao" "10.2.1"
@@ -547,7 +547,7 @@
 
 "@nrwl/eslint-plugin-nx@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-10.2.1.tgz#8181998654336e59b7d0246a3f1e20c9a8a6209b"
+  resolved "https://registry.yarnpkg.com/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-10.2.1.tgz#8181998654336e59b7d0246a3f1e20c9a8a6209b"
   integrity sha1-gYGZhlQzblm30CRqPx4gyaimIJs=
   dependencies:
     "@angular-devkit/core" "~10.0.0"
@@ -555,7 +555,7 @@
 
 "@nrwl/jest@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/jest/-/jest-10.2.1.tgz#2141a722868b38c514b891091dfd0596a57da500"
+  resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-10.2.1.tgz#2141a722868b38c514b891091dfd0596a57da500"
   integrity sha1-IUGnIoaLOMUUuJEJHf0FlqV9pQA=
   dependencies:
     "@angular-devkit/architect" "~0.1000.0"
@@ -565,7 +565,7 @@
 
 "@nrwl/linter@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/linter/-/linter-10.2.1.tgz#ee4d449e17d770245449c02995620de6f52172c6"
+  resolved "https://registry.yarnpkg.com/@nrwl/linter/-/linter-10.2.1.tgz#ee4d449e17d770245449c02995620de6f52172c6"
   integrity sha1-7k1EnhfXcCRUScAplWIN5vUhcsY=
   dependencies:
     "@angular-devkit/architect" "~0.1000.0"
@@ -575,7 +575,7 @@
 
 "@nrwl/node@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/node/-/node-10.2.1.tgz#ee17fcc0164b3b19bd014975119d50bcbb3b723d"
+  resolved "https://registry.yarnpkg.com/@nrwl/node/-/node-10.2.1.tgz#ee17fcc0164b3b19bd014975119d50bcbb3b723d"
   integrity sha1-7hf8wBZLOxm9AUl1EZ1QvLs7cj0=
   dependencies:
     "@angular-devkit/architect" "~0.1000.0"
@@ -599,7 +599,7 @@
 
 "@nrwl/nx-plugin@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/nx-plugin/-/nx-plugin-10.2.1.tgz#fb159a400da7f40663c6271f1825464575ce3143"
+  resolved "https://registry.yarnpkg.com/@nrwl/nx-plugin/-/nx-plugin-10.2.1.tgz#fb159a400da7f40663c6271f1825464575ce3143"
   integrity sha1-+xWaQA2n9AZjxicfGCVGRXXOMUM=
   dependencies:
     "@angular-devkit/architect" "~0.1000.0"
@@ -614,7 +614,7 @@
 
 "@nrwl/tao@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/tao/-/tao-10.2.1.tgz#0f5ca49873450861fc9dd5e5f58e67ee9c75e23e"
+  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-10.2.1.tgz#0f5ca49873450861fc9dd5e5f58e67ee9c75e23e"
   integrity sha1-D1ykmHNFCGH8ndXl9Y5n7px14j4=
   dependencies:
     "@angular-devkit/architect" "~0.1000.0"
@@ -630,7 +630,7 @@
 
 "@nrwl/workspace@10.2.1":
   version "10.2.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/@nrwl/workspace/-/workspace-10.2.1.tgz#1fff600919ed373f2ef0ab4570fb35465d457128"
+  resolved "https://registry.yarnpkg.com/@nrwl/workspace/-/workspace-10.2.1.tgz#1fff600919ed373f2ef0ab4570fb35465d457128"
   integrity sha1-H/9gCRntNz8u8KtFcPs1Rl1FcSg=
   dependencies:
     "@angular-devkit/architect" "~0.1000.0"
@@ -3169,7 +3169,7 @@ flat-cache@^2.0.1:
 
 flat@^5.0.2:
   version "5.0.2"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/flat/-/flat-5.0.2.tgz#8ca6fe332069ffa9d324c327198c598259ceb241"
+  resolved "https://registry.yarnpkg.com/flat/-/flat-5.0.2.tgz#8ca6fe332069ffa9d324c327198c598259ceb241"
   integrity sha1-jKb+MyBp/6nTJMMnGYxZglnOskE=
 
 flatted@^2.0.0:
@@ -3386,7 +3386,7 @@ glob-parent@^5.0.0, glob-parent@^5.1.0, glob-parent@^5.1.1, glob-parent@~5.1.0:
 
 glob@7.1.4:
   version "7.1.4"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
   integrity sha1-qmCKL2xXetNX4a5aXCbZqNGWklU=
   dependencies:
     fs.realpath "^1.0.0"
@@ -7839,7 +7839,7 @@ yallist@^4.0.0:
 
 yargs-parser@18.x, yargs-parser@^18.1.1, yargs-parser@^18.1.2:
   version "18.1.3"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/yargs-parser/-/yargs-parser-18.1.3.tgz#be68c4975c6b2abf469236b0c870362fab09a7b0"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-18.1.3.tgz#be68c4975c6b2abf469236b0c870362fab09a7b0"
   integrity sha1-vmjEl1xrKr9GkjawyHA2L6sJp7A=
   dependencies:
     camelcase "^5.0.0"
@@ -7847,7 +7847,7 @@ yargs-parser@18.x, yargs-parser@^18.1.1, yargs-parser@^18.1.2:
 
 yargs-parser@20.0.0:
   version "20.0.0"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/yargs-parser/-/yargs-parser-20.0.0.tgz#c65a1daaa977ad63cebdd52159147b789a4e19a9"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.0.0.tgz#c65a1daaa977ad63cebdd52159147b789a4e19a9"
   integrity sha1-xlodqql3rWPOvdUhWRR7eJpOGak=
 
 yargs-parser@^11.1.1:
@@ -7878,7 +7878,7 @@ yargs@12.0.5:
 
 yargs@15.4.1:
   version "15.4.1"
-  resolved "https://office.pkgs.visualstudio.com/_packaging/M365AdminUX/npm/registry/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha1-DYehbeAa7p2L7Cv7909nhRcw9Pg=
   dependencies:
     cliui "^6.0.0"
