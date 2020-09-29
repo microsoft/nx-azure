@@ -82,8 +82,7 @@
             "target": "storage-cache:build",
             "npmPackageName": "@nx-azure/storage-cache",
             "pluginOutputPath": "dist/packages/storage-cache",
-            "jestConfig": "packages/storage-cache-e2e/jest.config.js",
-            "tsSpecConfig": "packages/storage-cache-e2e/tsconfig.spec.json"
+            "jestConfig": "packages/storage-cache-e2e/jest.config.js"
           }
         }
       }
