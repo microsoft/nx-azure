@@ -12,7 +12,8 @@
     ".eslintrc": "*",
     "nx.json": "*",
     ".azure-devops/azure-pipelines-pr.yml": "*",
-    "tsconfig.base.json": "*"
+    "tsconfig.base.json": "*",
+    ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
