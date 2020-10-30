@@ -8,15 +8,16 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "config": "packages/storage-cache/.eslintrc",
-            "tsConfig": [
-              "packages/storage-cache/tsconfig.lib.json",
-              "packages/storage-cache/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!packages/storage-cache/**"]
+            "lintFilePatterns": [
+              "packages/storage-cache/**/*.ts",
+              "packages/storage-cache/**/*.spec.ts",
+              "packages/storage-cache/**/*.spec.tsx",
+              "packages/storage-cache/**/*.spec.js",
+              "packages/storage-cache/**/*.spec.jsx",
+              "packages/storage-cache/**/*.d.ts"
+            ]
           }
         },
         "test": {
