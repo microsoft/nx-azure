@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-azure/storage-cache": ["libs/storage-cache/src/index.ts"]
+      "@nx-azure/storage-cache": ["libs/storage-cache/src/index.ts"],
+      "@nx-azure/azcopy": ["packages/azcopy/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
