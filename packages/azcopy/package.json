@@ -1,4 +1,7 @@
 {
   "name": "@nx-azure/azcopy",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "bin": {
+    "@nx-azure/azcopy": "./src/index.js"
+  }
 }
