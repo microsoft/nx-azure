@@ -87,6 +87,53 @@
           }
         }
       }
+    },
+    "azcopy": {
+      "root": "packages/azcopy",
+      "sourceRoot": "packages/azcopy/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/azcopy/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/azcopy/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/azcopy",
+            "tsConfig": "packages/azcopy/tsconfig.lib.json",
+            "packageJson": "packages/azcopy/package.json",
+            "main": "packages/azcopy/src/index.ts",
+            "assets": [
+              {
+                "glob": "**/*.md",
+                "input": "packages/azcopy",
+                "output": "/"
+              },
+              {
+                "glob": "**/*.ps1",
+                "input": "packages/azcopy",
+                "output": "/"
+              },
+              {
+                "glob": "**/*.sh",
+                "input": "packages/azcopy",
+                "output": "/"
+              }
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

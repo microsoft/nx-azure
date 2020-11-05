@@ -30,6 +30,9 @@
     "storage-cache-e2e": {
       "tags": [],
       "implicitDependencies": ["storage-cache"]
+    },
+    "azcopy": {
+      "tags": []
     }
   },
   "workspaceLayout": {
