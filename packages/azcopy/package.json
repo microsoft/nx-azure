@@ -1,7 +1,7 @@
 {
   "name": "@nx-azure/azcopy",
   "version": "0.0.1",
-  "description": "A node passthrough for `azcopy` commandline tool described at https://aka.ms/azcopy",
+  "description": "A nodejs passthrough for `azcopy` commandline tool described at https://aka.ms/azcopy",
   "main": "index.js",
   "types": "index.d.ts",
   "typings": "index.d.ts",
