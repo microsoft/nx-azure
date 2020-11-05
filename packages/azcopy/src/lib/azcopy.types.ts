@@ -14,3 +14,5 @@ export const SupportedArchAndPlatform = [
   "darwin_x32",
   "darwin_x64",
 ];
+
+export type ArgType<T> = T extends (...args: infer D) => unknown ? D : never;
