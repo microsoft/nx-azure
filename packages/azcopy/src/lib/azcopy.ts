@@ -5,7 +5,7 @@ import * as os from "os";
 import * as path from "path";
 import * as yargs from "yargs";
 import { SupportedArchAndPlatform } from "./azcopy.types";
-import { wrapSpinner, writeDownload } from "./helpers";
+import { ensureBinFolder, wrapSpinner, writeDownload } from "./helpers";
 
 const platform = os.platform();
 const arch = os.arch();
@@ -29,6 +29,7 @@ export async function azcopy(
     console.log("binary exists");
   } catch (error) {
     force = true;
+    await ensureBinFolder();
     console.log("binary not found");
   }
 
@@ -71,7 +72,7 @@ export async function azcopy(
         () =>
           new Promise((resolve, reject) => {
             exec(
-              `powershell -ExecutionPolicy RemoteSigned -File .\\${scriptFile}`,
+              `powershell -ExecutionPolicy RemoteSigned -File ${scriptFile}`,
               {
                 ...commonExecOptions,
                 windowsHide: true,

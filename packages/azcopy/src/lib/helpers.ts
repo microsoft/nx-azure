@@ -1,7 +1,29 @@
-import { createWriteStream } from "fs";
+import { createWriteStream, existsSync, mkdir } from "fs";
 import * as ora from "ora";
 import * as path from "path";
 import { ArgType } from "./azcopy.types";
+
+const binPath = path.resolve(__dirname, "./scripts/bin");
+
+export function ensureBinFolder() {
+  return new Promise((resolve, reject) => {
+    if (!existsSync(binPath))
+      mkdir(
+        binPath,
+        // Apparently this is not documented in @types/node but NODEJS docs say we can use it this way - https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        { recursive: true },
+        (err) => {
+          if (err) {
+            reject(err);
+          }
+
+          resolve();
+        }
+      );
+  });
+}
 
 export function writeDownload(relativeFilePath: string) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { azcopy } from "./lib/azcopy";
 
 azcopy();

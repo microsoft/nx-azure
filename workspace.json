@@ -114,7 +114,23 @@
             "tsConfig": "packages/azcopy/tsconfig.lib.json",
             "packageJson": "packages/azcopy/package.json",
             "main": "packages/azcopy/src/index.ts",
-            "assets": ["packages/azcopy/*.md"]
+            "assets": [
+              {
+                "glob": "**/*.md",
+                "input": "packages/azcopy",
+                "output": "/"
+              },
+              {
+                "glob": "**/*.ps1",
+                "input": "packages/azcopy",
+                "output": "/"
+              },
+              {
+                "glob": "**/*.sh",
+                "input": "packages/azcopy",
+                "output": "/"
+              }
+            ]
           }
         }
       }

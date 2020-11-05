@@ -1,5 +1,15 @@
 {
   "name": "@nx-azure/azcopy",
   "version": "0.0.1",
+  "description": "A node passthrough for `azcopy` commandline tool described at https://aka.ms/azcopy",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "typings": "index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/nx-azure"
+  },
+  "homepage": "https://github.com/microsoft/nx-azure",
   "bin": "./src/index.js"
 }
