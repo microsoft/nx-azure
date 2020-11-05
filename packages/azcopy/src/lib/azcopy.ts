@@ -51,14 +51,13 @@ export async function azcopy(
 
   if (force) {
     if (platform === "win32") {
+      scriptFile = "win.ps1";
       if (arch === "x32") {
         downloadLink = "https://aka.ms/downloadazcopy-v10-windows-32bit";
         downloadedFileRelativePath = "./scripts/bin/azcopy_win32.zip";
-        scriptFile = "win32.ps1";
       } else {
-        downloadLink = "https://aka.ms/downloadazcopy-v10-windows-32bit";
-        downloadedFileRelativePath = "./scripts/bin/azcopy_win32.zip";
-        scriptFile = "win32.ps1";
+        downloadLink = "https://aka.ms/downloadazcopy-v10-windows";
+        downloadedFileRelativePath = "./scripts/bin/azcopy_win32_x64.zip";
       }
 
       await wrapSpinner(`Downloading azcopy from ${downloadLink}`, async () => {
@@ -72,7 +71,7 @@ export async function azcopy(
         () =>
           new Promise((resolve, reject) => {
             exec(
-              `powershell -ExecutionPolicy RemoteSigned -File ./${scriptFile}`,
+              `powershell -ExecutionPolicy RemoteSigned -File .\\${scriptFile}`,
               {
                 ...commonExecOptions,
                 windowsHide: true,
@@ -80,6 +79,7 @@ export async function azcopy(
               (error) => {
                 if (error) {
                   reject("Error extracting azcopy files");
+                  console.error(error);
                 }
 
                 resolve();
@@ -88,14 +88,13 @@ export async function azcopy(
           })
       );
     } else if (platform === "linux" || platform === "darwin") {
+      scriptFile = "nix.sh";
       if (platform === "linux") {
         downloadLink = "https://aka.ms/downloadazcopy-v10-linux";
         downloadedFileRelativePath = "./scripts/bin/azcopy_linux.tar.gz";
-        scriptFile = "nix.sh";
       } else {
         downloadLink = "https://aka.ms/downloadazcopy-v10-mac";
         downloadedFileRelativePath = "./scripts/bin/azcopy_linux.tar.gz";
-        scriptFile = "osx.sh";
       }
 
       await wrapSpinner(`Downloading azcopy from ${downloadLink}`, async () => {
@@ -111,6 +110,7 @@ export async function azcopy(
             exec(`./${scriptFile}`, commonExecOptions, (error) => {
               if (error) {
                 reject("Error extracting azcopy files");
+                console.error(error);
               }
 
               resolve();

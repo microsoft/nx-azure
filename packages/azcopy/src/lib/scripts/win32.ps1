@@ -1,1 +1,0 @@
-Write-Output "win32"
