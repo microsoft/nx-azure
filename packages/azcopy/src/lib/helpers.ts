@@ -7,7 +7,7 @@ const binPath = path.resolve(__dirname, "./scripts/bin");
 
 export function ensureBinFolder() {
   return new Promise((resolve, reject) => {
-    if (!existsSync(binPath))
+    if (!existsSync(binPath)) {
       mkdir(
         binPath,
         // Apparently this is not documented in @types/node but NODEJS docs say we can use it this way - https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback
@@ -22,6 +22,9 @@ export function ensureBinFolder() {
           resolve();
         }
       );
+    } else {
+      resolve();
+    }
   });
 }
 

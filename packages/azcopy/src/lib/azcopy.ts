@@ -7,6 +7,9 @@ import * as yargs from "yargs";
 import { SupportedArchAndPlatform } from "./azcopy.types";
 import { ensureBinFolder, wrapSpinner, writeDownload } from "./helpers";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { hideBin } = require("yargs/helpers");
+
 const platform = os.platform();
 const arch = os.arch();
 const yargsValues = yargs(process.argv)
@@ -121,13 +124,8 @@ export async function azcopy(
     }
   }
 
-  const argString = process.argv
-    .filter(
-      (value) =>
-        value !== "--force-bin-download" && !yargsValues._.includes(value)
-    )
-    .join(" ");
+  const args = hideBin(process.argv).join(" ");
 
   console.log("------ executing azcopy ------ \n");
-  execSync(`${binPath} ${argString}`, commonExecOptions);
+  execSync(`${binPath} ${args}`, commonExecOptions);
 }
