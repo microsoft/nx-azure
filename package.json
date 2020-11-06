@@ -33,6 +33,7 @@
   "dependencies": {
     "azure-storage": "^2.10.3",
     "node-fetch": "^2.6.1",
+    "ora": "^5.0.0",
     "rxjs": "6.5.5",
     "tar": "^6.0.2",
     "yargs": "^15.4.1"
