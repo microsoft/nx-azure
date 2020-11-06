@@ -67,15 +67,15 @@
                 "output": "."
               }
             ],
-            "srcRootForCompilationRoot": "packages\\storage-cache"
+            "srcRootForCompilationRoot": "packages/storage-cache"
           }
         }
       }
     },
     "storage-cache-e2e": {
       "projectType": "application",
-      "root": "packages\\storage-cache-e2e",
-      "sourceRoot": "packages\\storage-cache-e2e/src",
+      "root": "packages/storage-cache-e2e",
+      "sourceRoot": "packages/storage-cache-e2e/src",
       "architect": {
         "e2e": {
           "builder": "@nrwl/nx-plugin:e2e",

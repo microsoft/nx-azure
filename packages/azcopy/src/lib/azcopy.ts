@@ -7,6 +7,7 @@ import * as yargs from "yargs";
 import { SupportedArchAndPlatform } from "./azcopy.types";
 import { ensureBinFolder, wrapSpinner, writeDownload } from "./helpers";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { hideBin } = require("yargs/helpers");
 
 const platform = os.platform();
