@@ -115,7 +115,7 @@ export async function azcopy(force: boolean = forceBinDownload) {
     }
   }
 
-  const args = process.argv.join(" ");
+  const args = process.argv.splice(2).join(" ");
 
   console.log("------ executing azcopy ------ \n");
   execSync(`${binPath} ${args}`, commonExecOptions);
