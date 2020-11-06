@@ -118,12 +118,9 @@ export async function azcopy(force: boolean = forceBinDownload) {
     }
   }
 
-  const args = process.argv
-    .splice(2)
-    .filter((arg) => {
-      return argsToFilter.includes(arg);
-    })
-    .join(" ");
+  const args = process.argv.splice(2).filter((arg) => {
+    return argsToFilter.includes(arg);
+  });
 
   const azCopyCommand = [binPath, ...args];
 
