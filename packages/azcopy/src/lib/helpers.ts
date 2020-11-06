@@ -1,5 +1,6 @@
 import { createWriteStream, existsSync, mkdir } from "fs";
 import * as ora from "ora";
+import { platform } from "os";
 import * as path from "path";
 import { ArgType } from "./azcopy.types";
 
@@ -60,4 +61,22 @@ export async function wrapSpinner(
   }
 
   spinner.succeed();
+}
+
+export function shellEscape(args: string[]) {
+  const quote = platform() === "win32" ? '"' : "'";
+
+  return args
+    .map((arg) => {
+      if (!/^[A-Za-z0-9_/-]+$/.test(arg)) {
+        arg = quote + arg.replace(quote, `\${quote}`) + quote;
+        arg = arg
+          .replace(/^(?:'')+/g, "") // unduplicate single-quote at the beginning
+          .replace(/^(?:"")+/g, "") // unduplicate double-quote at the beginning
+          .replace(/\\'''/g, "\\'") // remove non-escaped single-quote if there are enclosed between 2 escaped
+          .replace(/\\"""/g, '\\"'); // remove non-escaped double-quote if there are enclosed between 2 escaped
+      }
+      return arg;
+    })
+    .join(" ");
 }

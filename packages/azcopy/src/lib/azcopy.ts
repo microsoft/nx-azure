@@ -3,9 +3,13 @@ import { accessSync } from "fs";
 import fetch from "node-fetch";
 import * as os from "os";
 import * as path from "path";
-import * as shellescape from "shell-escape";
 import { SupportedArchAndPlatform } from "./azcopy.types";
-import { ensureBinFolder, wrapSpinner, writeDownload } from "./helpers";
+import {
+  ensureBinFolder,
+  shellEscape,
+  wrapSpinner,
+  writeDownload,
+} from "./helpers";
 
 const argsToFilter = ["--force-bin-download"];
 
@@ -122,7 +126,7 @@ export async function azcopy(force: boolean = forceBinDownload) {
     return !argsToFilter.includes(arg);
   });
 
-  const escapedCommand = shellescape(args);
+  const escapedCommand = shellEscape(args);
   console.log("------ executing azcopy ------ \n");
   execSync(`${binPath} ${escapedCommand}`, commonExecOptions);
 }
