@@ -122,10 +122,7 @@ export async function azcopy(force: boolean = forceBinDownload) {
     return !argsToFilter.includes(arg);
   });
 
-  const azCopyCommand = [binPath, ...args];
-
-  const escapedCommand = shellescape(azCopyCommand);
-
+  const escapedCommand = shellescape(args);
   console.log("------ executing azcopy ------ \n");
-  execSync(escapedCommand, commonExecOptions);
+  execSync(`${binPath} ${escapedCommand}`, commonExecOptions);
 }
