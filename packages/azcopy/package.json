@@ -11,7 +11,9 @@
     "url": "https://github.com/microsoft/nx-azure"
   },
   "homepage": "https://github.com/microsoft/nx-azure",
-  "bin": "./src/index.js",
+  "bin": {
+    "nx-azure-azcopy": "./src/index.js"
+  },
   "dependencies": {
     "node-fetch": "^2.6.1",
     "tslib": "^2.0.1",
