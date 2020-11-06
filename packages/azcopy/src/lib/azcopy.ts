@@ -3,8 +3,11 @@ import { accessSync } from "fs";
 import fetch from "node-fetch";
 import * as os from "os";
 import * as path from "path";
+import * as shellescape from "shell-escape";
 import { SupportedArchAndPlatform } from "./azcopy.types";
 import { ensureBinFolder, wrapSpinner, writeDownload } from "./helpers";
+
+const argsToFilter = ["--force-bin-download"];
 
 const platform = os.platform();
 const arch = os.arch();
@@ -115,8 +118,17 @@ export async function azcopy(force: boolean = forceBinDownload) {
     }
   }
 
-  const args = process.argv.splice(2).join(" ");
+  const args = process.argv
+    .splice(2)
+    .filter((arg) => {
+      return argsToFilter.includes(arg);
+    })
+    .join(" ");
+
+  const azCopyCommand = [binPath, ...args];
+
+  const escapedCommand = shellescape(azCopyCommand);
 
   console.log("------ executing azcopy ------ \n");
-  execSync(`${binPath} ${args}`, commonExecOptions);
+  execSync(escapedCommand, commonExecOptions);
 }

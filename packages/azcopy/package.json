@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
+    "shell-escape": "^0.2.0",
     "tslib": "^2.0.1",
     "ora": "^5.0.0"
   }
