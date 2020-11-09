@@ -3,23 +3,21 @@ import { accessSync } from "fs";
 import fetch from "node-fetch";
 import * as os from "os";
 import * as path from "path";
-import * as yargs from "yargs";
 import { SupportedArchAndPlatform } from "./azcopy.types";
-import { ensureBinFolder, wrapSpinner, writeDownload } from "./helpers";
+import {
+  ensureBinFolder,
+  shellEscape,
+  wrapSpinner,
+  writeDownload,
+} from "./helpers";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { hideBin } = require("yargs/helpers");
+const argsToFilter = ["--force-bin-download"];
 
 const platform = os.platform();
 const arch = os.arch();
-const yargsValues = yargs(process.argv)
-  .help(false)
-  .version(false)
-  .option("--force-bin-download", { alias: "-F", type: "boolean" }).argv;
+const forceBinDownload = process.argv.includes("--force-bin-download");
 
-export async function azcopy(
-  force: boolean = yargsValues["--force-bin-download"]
-) {
+export async function azcopy(force: boolean = forceBinDownload) {
   console.log(`Detected ${platform} platform (arch - ${arch})`);
 
   const binPath = path.resolve(
@@ -124,8 +122,11 @@ export async function azcopy(
     }
   }
 
-  const args = hideBin(process.argv).join(" ");
+  const args = process.argv.slice(2, process.argv.length).filter((arg) => {
+    return !argsToFilter.includes(arg);
+  });
 
+  const escapedCommand = shellEscape(args);
   console.log("------ executing azcopy ------ \n");
-  execSync(`${binPath} ${args}`, commonExecOptions);
+  execSync(`${binPath} ${escapedCommand}`, commonExecOptions);
 }
